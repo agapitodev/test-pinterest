@@ -51,12 +51,19 @@ const CheckboxContainer = styled.div`
 interface CheckboxProps {
   children: React.ReactNode;
   id: string;
+  value: boolean;
+  setValue: (newValue: boolean) => void;
 }
 
 export default function Checkbox(props: Readonly<CheckboxProps>) {
   return (
     <CheckboxContainer>
-      <input type="checkbox" id={props.id} />
+      <input
+        type="checkbox"
+        id={props.id}
+        checked={props.value}
+        onChange={(event) => props.setValue(event.target.checked)}
+      />
       <span />
       <label htmlFor={props.id}>{props.children}</label>
     </CheckboxContainer>
