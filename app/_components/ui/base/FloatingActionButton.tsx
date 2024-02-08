@@ -9,6 +9,9 @@ import Link from 'next/link';
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   $variant?: 'contained' | 'outlined';
   $color?: ColorType;
+  $rounded?: boolean;
+  $withShadow?: boolean;
+  $withBlurShadow?: boolean;
   href?: string;
 }
 
@@ -16,7 +19,8 @@ const BaseButton = styled.button<ButtonProps>`
   width: 3rem;
   height: 3rem;
   font-size: 1.5rem;
-  border-radius: 100%;
+  border-radius: ${(props) =>
+    props.$rounded ? 'var(--large-border-radius)' : '100%'};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,6 +29,14 @@ const BaseButton = styled.button<ButtonProps>`
   border-style: solid;
   border-color: ${(props) =>
     props.$color ? COLOR_VALUES[props.$color] : 'rgb(var(--foreground-rgb))'};
+  box-shadow: ${(props) =>
+    props.$withShadow
+      ? props.$withBlurShadow
+        ? '4px 4px 12px 4px rgba(0, 0, 0, 0.2)'
+        : '-4px -4px 0px 1px rgba(0, 0, 0, 0.15)'
+      : props.$withBlurShadow
+        ? '4px 4px 12px 4px rgba(0, 0, 0, 0.2)'
+        : '0'};
 `;
 
 const ContainedButton = styled(BaseButton)`
