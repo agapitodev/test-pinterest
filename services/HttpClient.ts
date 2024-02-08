@@ -11,7 +11,7 @@ abstract class HttpClient {
     this.instance = axios.create({
       baseURL,
       headers: {
-        Authorization: `CLIENT-ID 7228843611a57f3`,
+        Authorization: `CLIENT-ID ${process.env.NEXT_PUBLIC_IMGUR_CLIENT_ID}`,
       },
     });
 

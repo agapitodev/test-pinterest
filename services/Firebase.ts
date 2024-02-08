@@ -33,12 +33,12 @@ class FirebaseService {
 
   private constructor() {
     const firebaseConfig = {
-      apiKey: 'AIzaSyAtVxQ14XhUFkBw2SsWr-kuYifd0I-OCyw',
-      authDomain: 'fake-pinterest.firebaseapp.com',
-      projectId: 'fake-pinterest',
-      storageBucket: 'fake-pinterest.appspot.com',
-      messagingSenderId: '171063190084',
-      appId: '1:171063190084:web:ab8dda73a19ca9b8c45211',
+      apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+      authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+      projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+      storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+      messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGIN_SENDER_ID,
+      appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
     };
 
     this.instance = initializeApp(firebaseConfig);
