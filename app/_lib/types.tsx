@@ -52,3 +52,9 @@ export type Image = {
   type: string;
   datetime: number;
 };
+
+export type UploadedImage = {
+  id: string;
+  url: string;
+  name: string;
+};
