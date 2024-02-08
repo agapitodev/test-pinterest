@@ -4,6 +4,7 @@ export { default as Container } from './Container';
 export { default as FloatingActionButton } from './FloatingActionButton';
 export { default as Grid } from './Grid';
 export { default as Link } from './Link';
+export { default as Modal } from './Modal';
 export { default as Row } from './Row';
 export { default as TextField } from './TextField';
 export { default as Typography } from './Typography';

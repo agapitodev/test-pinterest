@@ -3,13 +3,17 @@
 import { useState } from 'react';
 import { SearchBox } from '@/app/_components/ui/dashboard';
 
-export default function SearchImages() {
+interface SearchImagesProps {
+  onSearch: (query: string) => void;
+}
+
+export default function SearchImages(props: Readonly<SearchImagesProps>) {
   const [query, setQuery] = useState('');
   return (
     <SearchBox
       query={query}
       setQuery={setQuery}
-      onSearch={() => alert(`searching: ${query}`)}
+      onSearch={() => props.onSearch(query)}
     />
   );
 }

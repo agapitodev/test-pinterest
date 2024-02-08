@@ -8,6 +8,7 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Fake Pinterest',
   description: 'Created for testing skills',
+  referrer: 'no-referrer',
 };
 
 export default function RootLayout({

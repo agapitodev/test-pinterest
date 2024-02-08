@@ -19,3 +19,36 @@ export type ColorValuesMapper = {
 };
 
 export type ColorType = keyof ColorValuesMapper;
+
+export type RawImage = {
+  id: string;
+  is_album: boolean;
+  link: string;
+  type: string;
+  datetime: number;
+  images: [
+    {
+      id: string;
+      link: string;
+      type: string;
+      datetime: number;
+    },
+  ];
+};
+
+export type ResponseImages = {
+  data: RawImage[];
+};
+
+export type ResponseImagesByTag = {
+  data: {
+    items: RawImage[];
+  };
+};
+
+export type Image = {
+  id: string;
+  link: string;
+  type: string;
+  datetime: number;
+};
