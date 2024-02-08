@@ -1,19 +1,32 @@
 'use client';
 
 import styled from 'styled-components';
+import { COLOR_VALUES } from '@/app/_lib/constants';
+import { ColorType } from '@/app/_lib/types';
 
-const TextField = styled.input`
+interface TextFieldProps {
+  $color?: ColorType;
+}
+
+const TextField = styled.input<TextFieldProps>`
   font-size: 1rem;
   width: 100%;
   padding: 1rem;
   border-radius: var(--small-border-radius);
-  border: 1px solid rgb(var(--auxiliar-rgb));
+  border-width: 1px;
+  border-style: solid;
+  border-color: ${(props) =>
+    props.$color ? COLOR_VALUES[props.$color] : 'rgb(var(--foreground-rgb))'};
   background: rgb(var(--background-dark-rgb));
   &::placeholder {
-    color: rgb(var(--auxiliar-rgb));
+    color: ${(props) =>
+      props.$color ? COLOR_VALUES[props.$color] : 'rgb(var(--foreground-rgb))'};
   }
   &:focus {
-    outline: 1px solid rgb(var(--auxiliar-dark-rgb));
+    outline-width: 1px;
+    outline-style: solid;
+    outline-color: ${(props) =>
+      props.$color ? COLOR_VALUES[props.$color] : 'rgb(var(--foreground-rgb))'};
   }
 `;
 

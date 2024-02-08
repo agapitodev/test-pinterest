@@ -10,9 +10,9 @@ import {
 export default function SignupForm() {
   return (
     <AuthFormContainer>
-      <TextField placeholder="Name" />
-      <TextField placeholder="Email" />
-      <TextField placeholder="Password" />
+      <TextField placeholder="Name" $color="auxiliar" />
+      <TextField placeholder="Email" $color="auxiliar" />
+      <TextField placeholder="Password" $color="auxiliar" />
       <Checkbox id="terms">
         I agree to the{' '}
         <Link
